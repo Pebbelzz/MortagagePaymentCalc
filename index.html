@@ -23,8 +23,54 @@
   </head>
 
   <body>
-    <h1>Hello, world!</h1>
 
+    <div class="container">
+
+      <div id="topInput" class="col-md-8 col-md-offset-2 col-sm-12">
+
+        <div id="loanInfo" class="col-md-6 col-md-offset-1 col-sm-12">
+
+            <p>
+              <lable>Loan Amount:</lable>
+              <br>
+              <input id="loanAmount" type="currency" name="loanAmount" placeholder="$100,000">
+            </p>
+            <p>
+              <lable>Years:</lable>
+              <br>
+              <input id="loanYears" type="number" name="years" placeholder="30">
+            </p>
+            <p>
+              <lable>APR:</lable>
+              <br>
+              <input id="loanInterest" type="percentage" name="interest" placeholder="%">
+            </p>
+            <p>
+              <lable>Extra Each Month:</lable>
+              <br>
+              <input id="extraMoney" type="currency" name="extra" placeholder="$0">
+            </p>
+            <p>
+              <button id="loanCalcBtn"  onclick="loanGrab();">Submit</button>
+            </p>
+          
+        </div>
+      </div>
+
+        <div id="paymentlist" class="col-md-8 col-md-offset-2 col-sm-12">
+        <table  id="paymentsTable" class="table">
+          <thead>
+            <tr>
+              <th>Payment #</th>
+              <th>Total Payment</th>
+              <th>Paid on Principle</th>
+              <th>Paid onInterest</th>
+              <th>Remaning Principle</th>
+            </tr>
+          <thead>
+        </table>
+      </div>
+    </div>
 
   </body>
 
