@@ -12,7 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    
+
     <script src="js/main.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,32 +27,33 @@
     <div class="container">
 
       <div id="topInput" class="col-md-8 col-md-offset-2 col-sm-12">
-
-        <div id="loanInfo" class="col-md-4 col-md-offset-1 col-sm-12">
-            <p>
-              <lable>Loan Amount:</lable>
-              <br>
-              <input id="loanAmount" type="currency" name="loanAmount" placeholder="$100,000">
-            </p>
-            <p>
-              <lable>Years:</lable>
-              <br>
-              <input id="loanYears" type="number" name="years" placeholder="30">
-            </p>
-            <p>
-              <lable>APR:</lable>
-              <br>
-              <input id="loanInterest" type="percentage" name="interest" placeholder="%">
-            </p>
-            <p>
-              <lable>Extra Each Month:</lable>
-              <br>
-              <input id="extraMoney" type="number" step="0.01" name="extra" value=0>
-            </p>
-            <p>
-              <button id="loanCalcBtn" class="btn btn-primary" onclick="loanGrab();">Submit</button>
-            </p>
-        </div>
+        <form>
+          <div id="loanInfo" class="col-md-4 col-md-offset-1 col-sm-12">
+              <p>
+                <lable>Loan Amount:</lable>
+                <br>
+                <input id="loanAmount" type="currency" placeholder="$100,000">
+              </p>
+              <p>
+                <lable>Years:</lable>
+                <br>
+                <input id="loanYears" type="number" placeholder="30">
+              </p>
+              <p>
+                <lable>APR:</lable>
+                <br>
+                <input id="loanInterest" type="percentage" placeholder="%">
+              </p>
+              <p>
+                <lable>Extra Each Month:</lable>
+                <br>
+                <input id="extraMoney" type="number" step="0.01" value=0>
+              </p>
+              <p>
+                <button id="loanCalcBtn" type="button" class="btn btn-primary" onclick="loanGrab();">Submit</button>
+              </p>
+          </div>
+        </form>
         <div class="col-md-5" id="loanDetails">
           <div id="origInfo"></div>
           <div id="extraInfo"></div>
