@@ -14,7 +14,7 @@ function loanGrab(){
     interest = $('#loanInterest').val();
     extra = $('#extraMoney').val();
     extra = Number(extra);
-    totalInterest = Number(totalInterest);
+    totalInterest = 0;
     console.log("totalInterest at start of functions: ", totalInterest);
     $('#paymentsTable').find('tr:gt(0)').remove();
     payment = 0;
