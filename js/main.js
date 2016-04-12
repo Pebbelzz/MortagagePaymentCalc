@@ -79,12 +79,16 @@ function calcPayment(principle, numPayments, percent){
     }
   };
 
+
+  //add savings details if extraMoney field is greater than 0
   function loanDetail(){
     var paymentsSaved = numPayments - payment;
+    var interestSaved = (totalOrigInterest - totalInterest).toFixed(2);
     console.log("totalInterest: final ", totalInterest);
-    if(extra !== 0){
+    if(extra > 0){
       $('#extraInfo').append('<p><b>Payments saved: </b>' +
-      paymentsSaved + '</p>');
+      paymentsSaved + '<br>' +
+      '<b>Interest Saved: </b>' + interestSaved + '</p>');
     }
   };
 
