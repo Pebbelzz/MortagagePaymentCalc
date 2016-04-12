@@ -86,7 +86,7 @@ function calcPayment(principle, numPayments, percent){
     var interestSaved = (totalOrigInterest - totalInterest).toFixed(2);
     console.log("totalInterest: final ", totalInterest);
     if(extra > 0){
-      $('#extraInfo').append('<p><b>Payments saved: </b>' +
+      $('#extraInfo').html('<p><b>Payments saved: </b>' +
       paymentsSaved + '<br>' +
       '<b>Interest Saved: </b>' + interestSaved + '</p>');
     }
