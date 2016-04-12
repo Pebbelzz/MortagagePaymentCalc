@@ -19,6 +19,7 @@ function loanGrab(){
     totalOrigInterest = 0;
     console.log("totalInterest at start of functions: ", totalInterest);
     $('#paymentsTable').find('tr:gt(0)').remove();
+    $('#extraInfo').empty();
     payment = 0;
     calcPayment(initialLoan, months, interest);
 }
@@ -86,9 +87,10 @@ function calcPayment(principle, numPayments, percent){
     var interestSaved = (totalOrigInterest - totalInterest).toFixed(2);
     console.log("totalInterest: final ", totalInterest);
     if(extra > 0){
-      $('#extraInfo').html('<p><b>Payments saved: </b>' +
-      paymentsSaved + '<br>' +
-      '<b>Interest Saved: </b>' + interestSaved + '</p>');
+      $('#extraInfo').html('<h4><b>Saved with Extra Money:</b></h4>' +
+        '<p><b>Payments saved: </b>' +
+        paymentsSaved + '<br>' +
+        '<b>Interest Saved: </b>$' + interestSaved + '</p>');
     }
   };
 
