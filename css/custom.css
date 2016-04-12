@@ -1,6 +1,11 @@
 
 
-#loanInfo{
+#topInput{
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+
+#loanDetails{
+  margin-top: 25px;
 }

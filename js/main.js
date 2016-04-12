@@ -33,19 +33,32 @@ function calcPayment(principle, numPayments, percent){
   function calcSplit(monthlyPayment, monthlyRate, principle){
     payment = payment + 1;
     var interestPaid = (principle * monthlyRate).toFixed(2);
-    paidOnPrinciple = (monthlyPayment - interestPaid).toFixed(2);
+    paidOnPrinciple = (monthlyPayment - interestPaid + extra).toFixed(2);
     principle = (principle - paidOnPrinciple - extra).toFixed(2);
     $('#paymentsTable tr:last').after('<tr><td>' + payment +
       '</td><td>' + monthlyPayment + '</td><td>' + paidOnPrinciple +
       '</td><td>' + interestPaid + '</td><td>' + principle + '</td>');
+
     //call calcSplit again if payment is not over the total
     //number of payments
-
     if(payment < numPayments && principle > 0){
       calcSplit(monthlyPayment, monthlyRate, principle);
     }
 
   };
 
+    function loanDetail(){
+      var paymentsSaved = numPayments - payment;
+      console.log("paymentsSaved: ", paymentsSaved);
+      $('#loanDetails').html('<b>Total Payments Originally: </b>' +
+      numPayments);
+
+      if(extra !== 0){
+        $('#loanDetails').append('<p><b>Payments saved: </b>' +
+        paymentsSaved + '</p>');
+      }
+    }
+
   calcSplit(monthlyPayment, monthlyRate, principle);
+  loanDetail();
 }
