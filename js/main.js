@@ -55,7 +55,7 @@ function calcPayment(principle, numPayments, percent){
     calcOrig();
     $('#origInfo').html('<b>Total Payments Originally: </b>' +
     origPayments +
-    '<p><b>Total Interes Paid w/o Extra: </b>' + totalOrigInterest);
+    '<p><b>Total Interes Paid w/o Extra: </b>$' + totalOrigInterest.toFixed(2));
     }
   untouchedLoan();
 
