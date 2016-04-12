@@ -6,6 +6,7 @@ var interest;
 var payment = 0;
 var extra;
 var totalInterest = 0;
+var totalOrigInterest = 0;
 
 function loanGrab(){
     initialLoan = Number($('#loanAmount').val());
@@ -15,6 +16,7 @@ function loanGrab(){
     extra = $('#extraMoney').val();
     extra = Number(extra);
     totalInterest = 0;
+    totalOrigInterest = 0;
     console.log("totalInterest at start of functions: ", totalInterest);
     $('#paymentsTable').find('tr:gt(0)').remove();
     payment = 0;
@@ -38,8 +40,8 @@ function calcPayment(principle, numPayments, percent){
     var origPrinciple = principle;
     var interestPerMonth = monthlyRate;
     var interestOrigPaid;
-    var totalOrigInterest = 0;
     var paidOrigPrinciple;
+
       function calcOrig(){
         installment = installment + 1;
         interestOrigPaid = Number((origPrinciple * interestPerMonth).toFixed(2));
@@ -75,19 +77,16 @@ function calcPayment(principle, numPayments, percent){
     if(payment < numPayments && principle > 0){
       calcSplit(monthlyPayment, monthlyRate, principle);
     }
-
   };
 
   function loanDetail(){
     var paymentsSaved = numPayments - payment;
     console.log("totalInterest: final ", totalInterest);
-
-
     if(extra !== 0){
       $('#extraInfo').append('<p><b>Payments saved: </b>' +
       paymentsSaved + '</p>');
     }
-  }
+  };
 
   calcSplit(monthlyPayment, monthlyRate, principle);
   loanDetail();
