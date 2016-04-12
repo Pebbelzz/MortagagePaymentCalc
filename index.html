@@ -32,7 +32,7 @@
               <p>
                 <lable>Loan Amount:</lable>
                 <br>
-                <input id="loanAmount" type="currency" placeholder="$100,000">
+                <input id="loanAmount" type="number" step="0.01" min="0.00" placeholder="$100,000">
               </p>
               <p>
                 <lable>Years:</lable>
@@ -42,12 +42,12 @@
               <p>
                 <lable>APR:</lable>
                 <br>
-                <input id="loanInterest" type="percentage" placeholder="%">
+                <input id="loanInterest" type="number" step=0.001 min="0.000" placeholder="%">
               </p>
               <p>
                 <lable>Extra Each Month:</lable>
                 <br>
-                <input id="extraMoney" type="number" step="0.01" value=0>
+                <input id="extraMoney" type="number" step="0.01" min="0" value=0>
               </p>
               <p>
                 <button id="loanCalcBtn" type="button" class="btn btn-primary" onclick="loanGrab();">Submit</button>
