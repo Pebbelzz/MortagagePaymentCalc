@@ -17,7 +17,6 @@ function loanGrab(){
     extra = Number(extra);
     totalInterest = 0;
     totalOrigInterest = 0;
-    console.log("totalInterest at start of functions: ", totalInterest);
     payment = 0;
     calcPayment(initialLoan, months, interest);
 }
@@ -90,7 +89,6 @@ function calcPayment(principle, numPayments, percent){
   function loanDetail(){
     var paymentsSaved = numPayments - payment;
     var interestSaved = (totalOrigInterest - totalInterest).toFixed(2);
-    console.log("totalInterest: final ", totalInterest);
     if(extra > 0){
       $('#extraInfo').html('<h4><b>Saved with Extra Money:</b></h4>' +
         '<p><b>Payments saved: </b>' +
