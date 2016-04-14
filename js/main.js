@@ -25,6 +25,7 @@ function loanGrab(){
 //resets info in window upon button click for either submit or reset
 function resetRemove(){
   $('#paymentsTable').find('tr:gt(0)').remove();
+  $('#origInfo').empty();
   $('#extraInfo').empty();
 }
 
