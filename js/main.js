@@ -18,10 +18,14 @@ function loanGrab(){
     totalInterest = 0;
     totalOrigInterest = 0;
     console.log("totalInterest at start of functions: ", totalInterest);
-    $('#paymentsTable').find('tr:gt(0)').remove();
-    $('#extraInfo').empty();
     payment = 0;
     calcPayment(initialLoan, months, interest);
+}
+
+//resets info in window upon button click for either submit or reset
+function resetRemove(){
+  $('#paymentsTable').find('tr:gt(0)').remove();
+  $('#extraInfo').empty();
 }
 
 function calcPayment(principle, numPayments, percent){
